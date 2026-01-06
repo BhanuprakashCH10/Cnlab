@@ -16,7 +16,7 @@ t = np.arange(len(nrz_signal)) / fs
 
 carrier = Ac * np.sin(2 * np.pi * fc * t)
 
-am_signal = (Ac + nrz_signal) * carrier
+am_signal = (Am + nrz_signal) * carrier
 
 plt.figure(figsize=(10, 8))
 
