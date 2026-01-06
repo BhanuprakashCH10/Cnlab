@@ -17,3 +17,25 @@ t = np.arange(len(nrz_signal)) / fs
 carrier = Ac * np.sin(2 * np.pi * fc * t)
 
 am_signal = (Ac + nrz_signal) * carrier
+
+plt.figure(figsize=(10, 8))
+
+plt.subplot(3, 1, 1)
+plt.plot(t, nrz_signal)
+plt.title("Message Signal (NRZ)")
+plt.grid(True)
+
+plt.subplot(3, 1, 2)
+plt.plot(t, carrier)
+plt.title("Carrier Signal (20 Hz)")
+plt.grid(True)
+
+plt.subplot(3, 1, 3)
+plt.plot(t, am_signal)
+plt.title("AM Modulated Signal")
+plt.grid(True)
+
+plt.tight_layout()
+plt.savefig("amplots.pdf")
+plt.show()
+
